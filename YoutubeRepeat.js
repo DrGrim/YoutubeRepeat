@@ -14,28 +14,28 @@ var Watcher;
 jQuery( "body" ).on('click','#rptSong',function() {
   
   //Check if button font color is #fff
-  if($('#rptSong').attr('style').indexOf('color: #fff;') > -1){
+  if(jQuery('#rptSong').attr('style').indexOf('color: #fff;') > -1){
      
      /*if font color is #fff then set isRepeatOn to true 
                                       change font color to #52f310
                                       start Watcher interval
                                       set CurrentSongUrl to current URL
      */
-     $('#rptSong').attr('style',$('#rptSong').attr('style').replace('color: #fff;','color: #52f310;'));
+     jQuery('#rptSong').attr('style',jQuery('#rptSong').attr('style').replace('color: #fff;','color: #52f310;'));
      isRepeatOn = true;
 
      CurrentSongUrl = window.location.href;
      Watcher = setInterval(CheckForEndOfSong, 100);
     
 
-  }else if($('#rptSong').attr('style').indexOf('color: #52f310;') > -1){
+  }else if(jQuery('#rptSong').attr('style').indexOf('color: #52f310;') > -1){
    	 
    	 /*if font color is #fff then set isRepeatOn to false 
                                       change font color to #fff
                                       stop Watcher interval
                                       unset CurrentSongUrl to current URL
      */
-     $('#rptSong').attr('style',$('#rptSong').attr('style').replace('color: #52f310;','color: #fff;'));
+     jQuery('#rptSong').attr('style',jQuery('#rptSong').attr('style').replace('color: #52f310;','color: #fff;'));
      isRepeatOn = false;
 
      CurrentSongUrl = "";
@@ -49,16 +49,16 @@ function CheckForEndOfSong() {
 
   if(isRepeatOn && window.location.href != CurrentSongUrl){
       window.history.back();
-      setTimeout(function(){ $('.ytp-play-button').click();}, 100);
+      setTimeout(function(){jQuery('.ytp-play-button').click();}, 100);
     }
 
-      if($('.ytp-play-button').attr('Title')){
+      if(jQuery('.ytp-play-button').attr('Title')){
           
-          $('.ytp-play-button').click();
+          jQuery('.ytp-play-button').click();
       
-      if($('.ytp-play-button').attr('Title') == 'Replay'){
+      if(jQuery('.ytp-play-button').attr('Title') == 'Replay'){
 
-         $('.ytp-large-play-button').click();
+         jQuery('.ytp-large-play-button').click();
          
       }
 
@@ -71,5 +71,5 @@ function StopCheckingForEndOfSong() {
 }
 
 //append button html code to youtube's player
-$('.ytp-left-controls').append(RepeatButtonDesign);
+jQuery('.ytp-left-controls').append(RepeatButtonDesign);
 
