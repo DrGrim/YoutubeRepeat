@@ -11,7 +11,7 @@ var CurrentSongUrl = "";
 var Watcher; 
 
 
-$( "body" ).on('click','#rptSong',function() {
+jQuery( "body" ).on('click','#rptSong',function() {
   
   //Check if button font color is #fff
   if($('#rptSong').attr('style').indexOf('color: #fff;') > -1){
