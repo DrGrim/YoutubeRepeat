@@ -1,9 +1,9 @@
 
 //Set button style
-var ButtonStyle = 'margin-left: 20px;color: #fff;float: right;cursor:pointer;width: 70px!Important;';
+var ButtonStyle = 'margin-left: 20px;color: #fff;float: right;cursor:pointer;width: 70px!Important;background-image:url(https://drgrim.github.io/YoutubeRepeat/repeat.svg);background-size: 60%;background-position: center center;background-repeat: no-repeat;background-color:transparent;';
 
 //Button html code
-var RepeatButtonDesign = '<input type="button" id="rptSong" class="ytp-button" value="Repeat" style="'+ButtonStyle+'" />';
+var RepeatButtonDesign = '<input type="button" id="rptSong" class="ytp-button" style="'+ButtonStyle+'" />';
 
 //GLOBALS
 var isRepeatOn = false;
@@ -13,29 +13,29 @@ var Watcher;
 
 jQuery( "body" ).on('click','#rptSong',function() {
   
-  //Check if button font color is #fff
-  if(jQuery('#rptSong').attr('style').indexOf('color: #fff;') > -1){
+  //Check if background-color:transparent
+  if(jQuery('#rptSong').attr('style').indexOf('background-color:transparent') > -1){
      
      /*if font color is #fff then set isRepeatOn to true 
                                       change font color to #52f310
                                       start Watcher interval
                                       set CurrentSongUrl to current URL
      */
-     jQuery('#rptSong').attr('style',jQuery('#rptSong').attr('style').replace('color: #fff;','color: #52f310;'));
+     jQuery('#rptSong').attr('style',jQuery('#rptSong').attr('style').replace('background-color:transparent','background-color:red'));
      isRepeatOn = true;
 
      CurrentSongUrl = window.location.href;
      Watcher = setInterval(CheckForEndOfSong, 100);
     
 
-  }else if(jQuery('#rptSong').attr('style').indexOf('color: #52f310;') > -1){
+  }else if(jQuery('#rptSong').attr('style').indexOf('background-color:red') > -1){
    	 
    	 /*if font color is #fff then set isRepeatOn to false 
                                       change font color to #fff
                                       stop Watcher interval
                                       unset CurrentSongUrl to current URL
      */
-     jQuery('#rptSong').attr('style',jQuery('#rptSong').attr('style').replace('color: #52f310;','color: #fff;'));
+     jQuery('#rptSong').attr('style',jQuery('#rptSong').attr('style').replace('background-color:red','background-color:transparent'));
      isRepeatOn = false;
 
      CurrentSongUrl = "";
@@ -72,4 +72,3 @@ function StopCheckingForEndOfSong() {
 
 //append button html code to youtube's player
 jQuery('.ytp-left-controls').append(RepeatButtonDesign);
-
