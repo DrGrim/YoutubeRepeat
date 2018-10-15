@@ -1,6 +1,6 @@
 
 //Set button style
-var ButtonStyle = 'margin-left: 20px;color: #fff;float: right;cursor:pointer;width: 70px!Important;background-image:url(https://drgrim.github.io/YoutubeRepeat/repeat.svg);background-size: 60%;background-position: center center;background-repeat: no-repeat;background-color:transparent;';
+var ButtonStyle = 'margin-left: -10px;color: #fff;cursor: pointer;width: 60px!Important;background-image: url(https://drgrim.github.io/YoutubeRepeat/repeat.svg); background-size: 60%;background-position: center center;background-repeat: no-repeat; background-color: transparent;';
 
 //Button html code
 var RepeatButtonDesign = '<input type="button" id="rptSong" class="ytp-button" style="'+ButtonStyle+'" />';
