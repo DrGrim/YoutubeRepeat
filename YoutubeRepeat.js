@@ -1,4 +1,3 @@
-
 //Set button style
 var ButtonStyle = 'color: #fff;cursor: pointer;width: 55px!Important;background-image: url(https://drgrim.github.io/YoutubeRepeat/repeat.svg); background-size: 60%;background-position: center center;background-repeat: no-repeat; background-color:transparent;';
 
@@ -49,7 +48,7 @@ function CheckForEndOfSong() {
 
   if(isRepeatOn && window.location.href != CurrentSongUrl){
       window.history.back();
-      setTimeout(function(){jQuery('.ytp-play-button').click();}, 100);
+      //setTimeout(function(){jQuery('.ytp-play-button').click();}, 500);
     }
 
       if(jQuery('.ytp-play-button').attr('Title')){
