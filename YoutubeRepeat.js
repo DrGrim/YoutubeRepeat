@@ -53,7 +53,7 @@ function CheckForEndOfSong() {
 
       if(jQuery('.ytp-play-button').attr('Title')){
           
-          jQuery('.ytp-play-button').click();
+          //jQuery('.ytp-play-button').click();
       
       if(jQuery('.ytp-play-button').attr('Title') == 'Replay'){
 
@@ -71,3 +71,4 @@ function StopCheckingForEndOfSong() {
 
 //append button html code to youtube's player
 jQuery('.ytp-left-controls').append(RepeatButtonDesign);
+jQuery('.ytd-app').css('background:red;')
