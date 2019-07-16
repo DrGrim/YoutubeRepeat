@@ -42,26 +42,19 @@ jQuery( "body" ).on('click','#rptSong',function() {
   }
   });
    
- 
+var clicks = 0; 
 //this function checksif repeat is on and if the url has changed , if changed the go back to the url saved in CurrentSongUrl variable
 function CheckForEndOfSong() {
-
+   
   if(isRepeatOn && window.location.href != CurrentSongUrl){
       window.history.back();
-      //setTimeout(function(){jQuery('.ytp-play-button').click();}, 500);
-    }
-
-      if(jQuery('.ytp-play-button').attr('Title')){
-          
-          //jQuery('.ytp-play-button').click();
-      
-      if(jQuery('.ytp-play-button').attr('Title') == 'Replay'){
-
-         jQuery('.ytp-large-play-button').click();
-         
+      if($('.ytp-play-button').attr('title') == 'Play (k)' || $('.ytp-play-button').attr('title') == 'Replay'){
+          setTimeout(function(){ jQuery('.ytp-large-play-button, .ytp-play-button').click(); }, 1000);
       }
-
     }
+
+    
+         
 
 }
 
@@ -69,6 +62,6 @@ function StopCheckingForEndOfSong() {
     clearInterval(Watcher);
 }
 
-//append button html code to youtube's player
+//append button html c6ode to youtube's player
 jQuery('.ytp-left-controls').append(RepeatButtonDesign);
 jQuery('.ytd-app').css('background:red;')
